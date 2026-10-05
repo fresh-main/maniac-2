@@ -1,0 +1,2 @@
+summon interaction ~ ~ ~ {Tags:["radio_loc1_interaction","radio_loc1_locked"],interaction:{height:1.0,width:1.0}}
+scoreboard players set @e[type=interaction,tag=radio_loc1_locked,limit=1,sort=nearest] radio_charge 0

@@ -1,3 +1,8 @@
+execute as @s[tag=radio_interact,tag=radio_loc1_locked] if items entity @s weapon.mainhand minecraft:potion[custom_name='{"text":"Топливо (1л.)","color":"yellow","italic":false}'] at @s run function maniac:radio/loc1/charge
+execute as @s[tag=radio_interact,tag=radio_loc1_ready] at @s run function maniac:radio/loc1/take
+execute as @s[tag=radio_loc1_interaction] on target run function maniac:radio/loc1/interact
+execute as @s[tag=radio_heli_interaction] on target run function maniac:radio/loc1/heli/enter
+
 execute unless function maniac:in_game/interaction/interactioner_test run return run data remove entity @s interaction
 execute as @s[tag=Item_interact] if function maniac:in_game/item_pickup/item_test run function maniac:in_game/item_pickup/select_function
 execute as @s[tag=backdoor_trigger] on target run title @s actionbar [{"text":"С ","color":"yellow"},{"text":"этой","color":"gold","bold":true},{"text":" стороны нет замка"}]

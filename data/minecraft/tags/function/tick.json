@@ -1,6 +1,7 @@
 {
     "replace": false,
     "values": [
-        "maniac:tick"
+        "maniac:tick",
+        "maniac:radio/loc1/call_tick"
     ]
 }

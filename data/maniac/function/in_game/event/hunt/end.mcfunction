@@ -5,3 +5,4 @@ title @a actionbar {"text": "Полиция прибыла, двери на кр
 function maniac:in_game/event/police/start
 kill @e[type=interaction,tag=roof]
 scoreboard players set police_status global_data 1
+execute if data storage efm switch{radio_heli_pending:1} run function maniac:radio/loc1/heli/spawn

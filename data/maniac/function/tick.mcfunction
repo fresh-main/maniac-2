@@ -3,6 +3,9 @@ execute if score game_state global_data matches 1 run function maniac:in_game/ti
 execute as @a unless score @s game_count = total game_count run function maniac:join/select
 execute store result score playerCount1 global_data if entity @a
 execute unless score playerCount1 global_data = playerCount2 global_data run function maniac:player/check
+execute if score radio_timer1 global_data matches 1.. as @n[nbt={SelectedItem:{components:{"minecraft:custom_data":{item:"рация"}}}}] run function maniac:radio/timer/radio_timer1
+execute if score radio_timer2 global_data matches 1.. as @n[nbt={SelectedItem:{components:{"minecraft:custom_data":{item:"рация"}}}}] run function maniac:radio/timer/radio_timer2
+execute if score radio_timer3 global_data matches 1.. as @n[nbt={SelectedItem:{components:{"minecraft:custom_data":{item:"рация"}}}}] run function maniac:radio/timer/radio_timer3
 
 execute as @e[type=interaction] if data entity @s attack at @s run function maniac:in_game/attack
 execute if data storage efm switch{tube:1} at @n[tag=phone_tube] unless entity @a[distance=..2,predicate=maniac:tube_check] run function maniac:objects/phone/tube/place

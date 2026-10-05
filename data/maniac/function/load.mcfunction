@@ -63,3 +63,7 @@ gamerule naturalRegeneration false
 gamerule keepInventory true
 gamerule doImmediateRespawn false
 gamerule fallDamage false
+
+scoreboard objectives add radio_charge dummy
+
+execute unless data storage efm radio_heli run data modify storage efm radio_heli set value {configured:0,x:0,y:0,z:0,bx:0,by:0,bz:0}

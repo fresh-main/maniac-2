@@ -1,0 +1,20 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "items": "minecraft:goat_horn",
+          "predicates": {
+            "minecraft:custom_data": {
+              "item": "рация"
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "maniac:radio/use"
+  }
+}

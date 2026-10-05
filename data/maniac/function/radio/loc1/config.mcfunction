@@ -1,0 +1,1 @@
+data modify storage efm radio_heli set value {configured:1,x:0,y:0,z:0,bx:0,by:0,bz:0}
