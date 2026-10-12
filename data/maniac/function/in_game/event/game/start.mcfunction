@@ -3,3 +3,4 @@ execute store result storage minecraft:efm temp int 60 run scoreboard players ge
 execute store result bossbar minecraft:timer max store result score bossbar_timer global_data run data get storage minecraft:efm temp
 bossbar set minecraft:timer color white
 bossbar set minecraft:timer visible true
+function maniac:radio/loc1/reset

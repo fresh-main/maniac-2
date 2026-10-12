@@ -96,3 +96,25 @@
  data modify storage efm Pos set value [["-3 18 -68","-6 18 -69","-5 17 -66"],["-33 18 -67","-35 17 -69"]]
  item replace block -154 -63 -2 container.0 with tripwire_hook[item_name='[{"text":"Ключ от ","color":"gray"},{"color":"gold","text":"вышки"}]',item_model="kluch_19",custom_data={key: "ключ от вышки",useCount:1}]
  function maniac:in_game/item_spawn/iterating
+#Генерация батареек для рации
+ data modify storage efm Pos set value [["-7 10 -62","-10 10 -57","-1 10 -57"]]
+ item replace block -154 -63 -2 container.0 with redstone[item_name='{"color":"red","text":"Батарейка"}',custom_data={item:"батарейка"},item_model="battery"]
+
+
+ function maniac:in_game/item_spawn/iterating
+#генерация ключа от кабинета директора
+  item replace block -154 -63 -2 container.0 with tripwire_hook[item_name='[{"text":"Ключ от ","color":"gray"},{"color":"dark_purple","text":"кабинета директора"}]',item_model="kluch_11",custom_data={key: "ключ от кабинета директора",useCount:1}]
+  execute positioned -51 10 -184 run function maniac:in_game/item_spawn/summon
+#генерация ключей в вожатских
+  data modify storage efm Pos set value [["-64 9 -101"],["-66 9 -99"],["-64 9 -89"],["-66 9 -87"],["-64 9 -83"]]
+  item replace block -154 -63 -2 container.0 with redstone[item_name='{"color":"red","text":"Батарейка"}',custom_data={item:"батарейка"},item_model="battery"]
+  item replace block -154 -63 -2 container.1 with tripwire_hook[item_name='[{"text":"Ключ от ","color":"gray"},{"color":"red","text":"медпункта"}]',item_model="kluch_4",custom_data={key: "ключ от медпункта",useCount:2}]
+  function maniac:in_game/item_spawn/iterating
+#генерация ключей в главном здании
+  data modify storage efm Pos set value [["-1 17 -176","-11 17 -187"],["-20 16 -192","-15 16 -189"]]
+  item replace block -154 -63 -2 container.0 with redstone[item_name='{"color":"red","text":"Батарейка"}',custom_data={item:"батарейка"},item_model="battery"]
+  item replace block -154 -63 -2 container.1 with tripwire_hook[item_name='[{"text":"Ключ от ","color":"gray"},{"color":"yellow","text":"электрощитовой"}]',item_model="kluch_14",custom_data={key: "ключ от электрощитовой",useCount:1}]
+  function maniac:in_game/item_spawn/iterating
+
+
+ execute positioned 40 30 -176 run function maniac:radio/loc1/spawn

@@ -10,3 +10,10 @@ kill @e[type=interaction,tag=radio_heli_interaction]
 kill @e[type=interaction,tag=radio_loc1_interaction]
 
 scoreboard players reset @e radio_charge
+scoreboard players set radio_timer1 global_data 0
+scoreboard players set radio_timer2 global_data 0
+scoreboard players set radio_timer3 global_data 0
+scoreboard players reset #radio_temp radio_charge
+title @a actionbar ""
+# Убиваем item_display рации (пассажир interaction умрёт автоматически)
+kill @e[type=item_display,tag=radio_loc1_visual]
