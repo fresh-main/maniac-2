@@ -3,7 +3,9 @@ execute as @s[tag=radio_interact,tag=radio_loc1_ready] at @s run function maniac
 execute as @s[tag=radio_loc1_interaction] on target run function maniac:radio/loc1/interact
 execute as @s[tag=radio_heli_interaction] on target run function maniac:radio/loc1/heli/enter
 
-execute unless function maniac:in_game/interaction/interactioner_test run return run data remove entity @s interaction
+execute unless function maniac:in_game/interaction/interactioner_test run data remove entity @s interaction
+execute unless function maniac:in_game/interaction/interactioner_test run return
+
 execute as @s[tag=Item_interact] if function maniac:in_game/item_pickup/item_test run function maniac:in_game/item_pickup/select_function
 execute as @s[tag=backdoor_trigger] on target run title @s actionbar [{"text":"С ","color":"yellow"},{"text":"этой","color":"gold","bold":true},{"text":" стороны нет замка"}]
 execute as @s[tag=roof] on target run title @s actionbar [{"text":"Дверь ","color":"yellow"},{"text":"пока","color":"gold","bold":true},{"text":" закрыта"}]
