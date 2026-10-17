@@ -1,8 +1,10 @@
 # Если рация уже заряжена, забираем её
-execute if entity @e[type=interaction,tag=radio_loc1_ready,limit=1,sort=nearest,distance=..6] run return run function maniac:radio/loc1/take
+execute if entity @e[type=interaction,tag=radio_loc1_ready,limit=1,sort=nearest,distance=..6] run function maniac:radio/loc1/take
+execute if entity @e[type=interaction,tag=radio_loc1_ready,limit=1,sort=nearest,distance=..6] run return
 
 # Если не заряжена, проверяем батарейку в руке
-execute unless items entity @s weapon.mainhand minecraft:redstone[custom_data={item:"батарейка"}] run return run title @s actionbar {"text":"Нужна батарейка","color":"red"}
+execute unless items entity @s weapon.mainhand minecraft:redstone[custom_data={item:"батарейка"}] run title @s actionbar {"text":"Нужна батарейка","color":"red"}
+execute unless items entity @s weapon.mainhand minecraft:redstone[custom_data={item:"батарейка"}] run return
 
 # Забираем 1 батарейку
 clear @s minecraft:redstone[custom_data={item:"батарейка"}] 1
