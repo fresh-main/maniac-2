@@ -1,10 +1,13 @@
 execute unless data storage efm switch{radio_heli_pending:1} run return
 
-execute if data storage efm switch{radio_heli_spawned:1} run return run data modify storage efm switch.radio_heli_pending set value 0
+# Если уже заспавнен — сбрасываем pending и выходим
+execute if data storage efm switch{radio_heli_spawned:1} run data modify storage efm switch.radio_heli_pending set value 0
+execute if data storage efm switch{radio_heli_spawned:1} run return
 
+# Если вертолёт не сконфигурирован — отменяем и сообщаем
 execute if data storage efm radio_heli {configured:0} run data modify storage efm switch.radio_heli_pending set value 0
-
-execute if data storage efm radio_heli {configured:0} run return run tellraw @a [{"text":"[Рация] ","color":"aqua"},{"text":"Не заданы координаты вертолёта. Отредактируйте maniac:radio/loc1/config","color":"red"}]
+execute if data storage efm radio_heli {configured:0} run tellraw @a [{"text":"[Рация] ","color":"aqua"},{"text":"Не заданы координаты вертолёта. Отредактируйте radio_loc1/heli в конфиге","color":"yellow"}]
+execute if data storage efm radio_heli {configured:0} run return
 
 data modify storage efm switch.radio_heli_pending set value 0
 data modify storage efm switch.radio_heli_spawned set value 1
